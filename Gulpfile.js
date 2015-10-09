@@ -7,6 +7,7 @@ var minifyCSS   = require('gulp-minify-css');
 var concat      = require('gulp-concat');
 var uglify      = require('gulp-uglify');
 var sourcemaps  = require('gulp-sourcemaps');
+var minifyHTML = require('gulp-minify-html');
 
 var messages = {
   jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
@@ -44,17 +45,27 @@ gulp.task('browser-sync', ['sass', 'jekyll-build'], function() {
   });
 });
 
+
+gulp.task('html', function() {
+    // Minify and copy the html
+    return gulp.src('_site/**/*.html')
+        .pipe(minifyHTML({
+            quotes: true
+        }))
+        .pipe(gulp.dest('_site/'));
+});
+
 gulp.task('scripts', function() {
   // Minify and copy all JavaScript
   // with sourcemaps all the way down
   return gulp.src(paths.scripts)
     .pipe(sourcemaps.init())
-      .pipe(concat('all.min.js'))
-      .pipe(uglify())
+    .pipe(concat('main.min.js'))
+    .pipe(uglify())
     .pipe(sourcemaps.write('./maps'))
-  .pipe(gulp.dest('./dist/js'))
-  .pipe(gulp.dest('_site/dist/js'))
-  .pipe(browserSync.reload({stream:true}));
+    .pipe(gulp.dest('./dist/js'))
+    .pipe(gulp.dest('_site/dist/js'))
+    .pipe(browserSync.reload({stream:true}));
 });
 /**
  * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
@@ -81,6 +92,7 @@ gulp.task('sass', function () {
           includePaths: ['scss', 'src/_sass'],
           onError: browserSync.notify
         }))
+        .pipe(concat('main.min.css'))
         .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
         .pipe(minifyCSS())
         .pipe(gulp.dest('dist/css'))
@@ -102,4 +114,4 @@ gulp.task('watch', function () {
  * Default task, running just `gulp` will compile the sass,
  * compile the jekyll site, launch BrowserSync & watch files.
  */
-gulp.task('default', ['scripts', 'sass', 'browser-sync', 'watch']);
+gulp.task('default', ['scripts', 'sass', 'html', 'browser-sync', 'watch']);
