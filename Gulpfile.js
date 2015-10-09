@@ -68,24 +68,9 @@ gulp.task('scripts', function() {
     .pipe(browserSync.reload({stream:true}));
 });
 /**
- * Compile files from _scss into both _site/css (for live injecting) and site (for future jekyll builds)
+ * Compile files from _scss
  */
- /*
-gulp.task('sass', function () {
-  return gulp.src('src/scss/*.scss')
-    .pipe(sass({
-      includePaths: ['scss', 'src/_sass'],
-      onError: browserSync.notify
-    }))
-    .pipe(prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-    // .pipe(sourcemaps.init())
-    .pipe(minifyCSS({keepBreaks:true}))
-      // .pipe(sourcemaps.write('./maps'))
-    .pipe(gulp.dest('dist/css'))
-    .pipe(gulp.dest('_site/dist/css'))
-    .pipe(browserSync.reload({stream:true}));
-});
-*/
+
 gulp.task('sass', function () {
     gulp.src('src/scss/*.scss')
         .pipe(sass({
@@ -105,9 +90,9 @@ gulp.task('sass', function () {
  * Watch html/md files, run jekyll & reload BrowserSync
  */
 gulp.task('watch', function () {
-  gulp.watch('src/scss/*.scss', ['sass']);
+  gulp.watch('src/scss/*.scss', ['sass'], ['src/_sass']);
   gulp.watch(['src/js/*.js', 'src/vendor/*.js'], ['scripts']);
-  gulp.watch(['index.html', '_layouts/*.html', '_posts/*'], ['jekyll-rebuild']);
+  gulp.watch(['index.html', '_layouts/*.html', '_includes/*'], ['jekyll-rebuild']);
 });
 
 /**

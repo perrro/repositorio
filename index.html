@@ -2,22 +2,116 @@
 layout: default
 ---
 
-<div class="home">
 
-  <h1 class="page-heading">Posts</h1>
+<div class="ch-g1" itemtype="http://schema.org/Product">
+  
+  <div class="ch-g2-4">
+    <img itemprop="image"  src="/src/images/product_01.jpg" alt='{{ page.title }}' />
+  </div>
+  
+  <div class="ch-g2-4">
+    <div class="ch-rightcolumn">
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+      <div itemprop="offers" itemtype="http://schema.org/Offer" class="ch-box-container ch-g2-4">
+         <span itemprop="price">$ 4799,99</span>
+         <div itemprop="availability" itemtype="http://schema.org/InStock">
+          <form class="ch-form myForm" action="#" method="post" accept-charset="utf-8">
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+            <fieldset>
+              <div class="ch-form-row">
+                <label for="select1">Quantity</label>
+                <select id="select1">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                </select>
+              </div>
+              <div class="ch-form-row">
+                <label for="select1">Payments</label>
+                <select id="select1">
+                  <option value="1">12</option>
+                  <option value="2">24</option>
+                  <option value="3">32</option>
+                </select>
+              </div>
+              <p>
+                <input class="ch-btn ch-btn-big" type="submit" name="Buy button" value="Buy">
+              </p>
+              <p>MercadoLibre isn't the owner of this product.</p>
+            </fieldset>
+            
+          </form>
+        </div>
+        
+        <div class="ch-box-container ch-g1">
+          <h2 id="carousel">More products like this</h2>
+            <div class="myCarousel ch-carousel clearfix ch-actions">
+            
+              <ul>
+                <li><img src="/src/images/product_01_min.jpg"></li>
+                <li><img src="/src/images/product_01_min.jpg"></li>
+                <li><img src="/src/images/product_01_min.jpg"></li>
+                <li><img src="/src/images/product_01_min.jpg"></li>
+                <li><img src="/src/images/product_01_min.jpg"></li>
+                <li><img src="/src/images/product_01_min.jpg"></li>
+                <li><img src="/src/images/product_01_min.jpg"></li>
+                <li><img src="/src/images/product_01_min.jpg"></li>
+                <li><img src="/src/images/product_01_min.jpg"></li>
+                <li><img src="/src/images/product_01_min.jpg"></li>
+                <li><img src="/src/images/product_01_min.jpg"></li>
+                <li><img src="/src/images/product_01_min.jpg"></li>
+                <li><img src="/src/images/product_01_min.jpg"></li>
+                <li><img src="/src/images/product_01_min.jpg"></li>
+                <li><img src="/src/images/product_01_min.jpg"></li>
+                <li><img src="/src/images/product_01_min.jpg"></li>
+                <li><img src="/src/images/product_01_min.jpg"></li>
+                <li><img src="/src/images/product_01_min.jpg"></li>
+                <li><img src="/src/images/product_01_min.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+      </div>
+     </div>
 
+    
+
+    
+
+
+   
+   <div class="tabs">
+
+       <div class="tab">
+           <input type="radio" checked="" name="tab-group-1" id="tab-1">
+           <label for="tab-1">Product description</label>
+
+           <div class="content" itemprop="description">
+               <p>Product description text</p>
+           </div>
+       </div>
+
+       <div class="tab">
+           <input type="radio" name="tab-group-1" id="tab-2">
+           <label for="tab-2">Questions</label>
+
+           <div class="content">
+               <ul>
+                 <li>
+                   <span>Buyer</span>
+                   <div class="ch-box-icon ch-box-info">Do you have this one in white?</div>
+                 </li>
+                 <li>
+                   <span>Seller</span>
+                   <div class="ch-box-icon ch-box-info">Do you have this one in white?</div>
+                 </li>
+               </ul>
+           </div>
+       </div>
+
+    </div>
+      
 </div>
+

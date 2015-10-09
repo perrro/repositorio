@@ -1,2 +1,3 @@
-alert("test1");
-alert("test2");
+$( document ).ready(function() {
+  var carousel = $(".myCarousel").carousel({"pagination": false});
+});
