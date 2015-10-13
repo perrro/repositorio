@@ -1,9 +1,89 @@
-html, body, .ch-layout {
-    margin: 0 auto;
-    width: 1000px;
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+%vertical-rhythm {
+    margin-bottom: $spacing-unit / 2;
 }
+
+
+
+/**
+ * Images
+ */
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+
+
+/**
+ * Figures
+ */
+figure > img {
+    display: block;
+}
+
+
+/**
+ * Override custom css
+ */
+
+body{
+    margin: 0 auto;
+    width: $content-width;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    font-weight: 300;
+    color: $text-color;
+    background-color: $background-color;
+    -webkit-text-size-adjust: 100%;
+}
+
 
 .ch-form-row label {
 	text-align: left;
 	width: 60px;
 }
+
+.ch-form-action{
+	padding-left: 0;
+	padding-bottom: 15px;
+}
+
+span[itemprop="price"] {
+   color: #900;
+   font-size: 30px;
+}
+
+header h1{
+	text-align: center;
+	padding: 20px 0;
+}
+
+figure{
+	background-color: #FFF;
+	border: 1px solid #ccc;
+}
+
+figure img{
+	margin: 0 auto;
+}
+
+li.buyer span{
+    color: #3a87ad;
+}
+
+li.seller span{
+    color: #468847;
+}
+
+.ch-carousel-item{
+    cursor: pointer;
+}
+
+

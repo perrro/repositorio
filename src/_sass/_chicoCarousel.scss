@@ -1,10 +1,15 @@
 .myCarousel .ch-carousel-item {
-    width: 50px;
-    height: 50px;
+    width: 90px;
+    height: 90px;
     border-radius: 5px;
+    margin-bottom:0;
 }
 
 .myCarousel img {
-    max-width: 50px;
-    max-height: 50px;
+    max-width: 90px;
+    max-height: 90px;
+}
+
+.myCarousel{
+	overflow: hidden;
 }
