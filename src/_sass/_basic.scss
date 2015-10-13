@@ -56,7 +56,7 @@ body{
 }
 
 span[itemprop="price"] {
-   color: #900;
+   color: $price-color;
    font-size: 30px;
 }
 
@@ -66,20 +66,19 @@ header h1{
 }
 
 figure{
-	background-color: #FFF;
-	border: 1px solid #ccc;
-}
-
-figure img{
-	margin: 0 auto;
+	background-color: $background-boxes-color;
+	border: 1px solid $grey-color-light;
+    img{
+        margin: 0 auto;
+    }
 }
 
 li.buyer span{
-    color: #3a87ad;
+    color: $buyer-color;
 }
 
 li.seller span{
-    color: #468847;
+    color: $seller-color;
 }
 
 .ch-carousel-item{

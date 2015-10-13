@@ -8,7 +8,6 @@ $spacing-unit:     30px;
 
 $text-color:       #111;
 $background-color:  #f4f4f4;
-$brand-color:      #2a7ae2;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
@@ -16,6 +15,13 @@ $grey-color-dark:  darken($grey-color, 25%);
 
 // Width of the content area
 $content-width:    1000px;
+
+
+$buyer-color:  #3a87ad;
+$seller-color: #468847;
+$price-color:  #900;
+
+$background-boxes-color: #FFF;
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
